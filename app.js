@@ -81,7 +81,7 @@ app.put("/change-password", async (request, response) => {
   } else {
     const com = await bcrypt.compare(oldPassword, resq.password);
     if (com === true) {
-      if (newPassword.lenght < 4) {
+      if (newPassword.length< 4) {
         response.status(400);
         response.send("Password is too short");
       } else {
